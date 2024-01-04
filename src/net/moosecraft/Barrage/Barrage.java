@@ -8,10 +8,12 @@ import java.util.Map.Entry;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -23,6 +25,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 // Referenced classes of package moosecraft:
 //            ArrowEffect
@@ -44,7 +47,7 @@ public class Barrage extends JavaPlugin implements Listener {
     }
 
     public enum ArrowType{
-    	Arrow, GlassHead, APmax, Torch, Net, Water, Fire, Lightning, Mudslinger, Warp, Poison, Frag, Impact, Bugbomb, PlanetCracker;
+    	Arrow, GlassHead, APmax, Torch, Net, Water, Fire, Lightning, Mudslinger, Warp, Poison, Frag, Impact, Bugbomb, PlanetCracker, Meteor;
     }
 
     
@@ -60,6 +63,7 @@ public class Barrage extends JavaPlugin implements Listener {
     static int crackradius = 15;
     static int crackpoison = 45;
     String nocost;
+
 
     public Barrage(){
         activeArrowType = new HashMap<Player, ArrowType >(14);
@@ -102,6 +106,7 @@ public class Barrage extends JavaPlugin implements Listener {
     }
     
     //this method checks if a player has enough materials to fire an arrow
+
 	public Boolean invCheck(Player player, String cost, Boolean remove){
         if(cost.equals(nocost)){
             return Boolean.valueOf(true);
@@ -264,7 +269,15 @@ public class Barrage extends JavaPlugin implements Listener {
             if(invCheck(player, cost, Boolean.valueOf(true)).booleanValue())
             {
                 newArrow = new ArrowID(arrow.getEntityId(), arrowType, player);
+                if (arrowType.equals(ArrowType.Meteor)){
+                	MeteorArrowEffect mEffect = new MeteorArrowEffect ((Arrow)arrow);
+                	mEffect.runTaskLater(this, 20);
+
+                
+                }
             }
+            
+            
             arrowList.add(newArrow);
         }
     }
@@ -310,7 +323,7 @@ public class Barrage extends JavaPlugin implements Listener {
                 String className = (new StringBuilder("net.moosecraft.Barrage.")).append(arrowType.toString()).append("ArrowEffect").toString();
                 try
                 {
-                    arrowEffect = (ArrowEffect)Class.forName(className).getDeclaredConstructor().newInstance();
+                    arrowEffect = (ArrowEffect)Class.forName(className).newInstance();
                 }
                 catch(ClassNotFoundException e)
                 {
@@ -428,7 +441,7 @@ public class Barrage extends JavaPlugin implements Listener {
                 String className = (new StringBuilder("net.moosecraft.Barrage.")).append(arrowType.toString()).append("ArrowEffect").toString();
                 try
                 {
-                    arrowEffect = (ArrowEffect)Class.forName(className).getDeclaredConstructor().newInstance();
+                    arrowEffect = (ArrowEffect)Class.forName(className).newInstance();
                 }
                 catch(ClassNotFoundException e)
                 {
@@ -455,5 +468,6 @@ public class Barrage extends JavaPlugin implements Listener {
         }
         return;
     }
+    
 
 }
