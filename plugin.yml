@@ -1,7 +1,9 @@
 name: Barrage
-main: moosecraft.Barrage
-version: 3.0
+author: MooseOnTehLoose
+main: net.moosecraft.Barrage.Barrage
+version: 2.1-1.20.2
+api-version: 1.20.2
 commands:
    barrage:
       description: Upgrade your arsenal with a variety of specialty arrows
-      usage: "left click your bow to change arrow types"
+      usage: "instructions: https://github.com/MooseOnTehLoose/Barrage"
