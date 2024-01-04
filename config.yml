@@ -7,17 +7,17 @@
 #
 #EX: Frag: TNT:1,Dirt:1,Water Bucket:64
 
-#GlassHead: Glass:1
-#APmax: Iron Ingot:3,Obsidian:1
-#Torch: Torch:1
-#Net: String:9
-#Water: Water Bucket:1
-#Fire: Torch:1,Coal:1
-#Lightning: Emerald:1,Iron Ingot:1,Magma Cream:1
-#Mudslinger: Dirt:1
-#Warp: Ender Pearl:1
-#Poison: Spider Eye:3,Red Mushroom:3,Brown Mushroom:3
+#GlassHead: glass:1
+#APmax: iron_ingot:3,obsidian:1
+#Torch: torch:1
+#Net: string:9
+#Water: water_bucket:1
+#Fire: torch:1,coal:1
+#Lightning: emerald:1,iron_ingot:1,magma_cream:1
+#Mudslinger: dirt:1
+#Warp: ender_pearl:1
+#Poison: spider_eye:3,red_mushroom:3,brown_mushroom:3
 #Frag: TNT:1
 #Impact: TNT:1
-#Bugbomb: Spider Eye:1,Sugar:10
-#PlanetCracker: Ghast Tear:1,Eye_Of_Ender:1,TNT:5,Redstone:5
+#Bugbomb: spider_eye:1,sugar:10
+#PlanetCracker: ghast_tear:1,ender_eye:1,TNT:5,redstone:5
