@@ -8,12 +8,10 @@ import java.util.Map.Entry;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -104,7 +102,6 @@ public class Barrage extends JavaPlugin implements Listener {
     }
     
     //this method checks if a player has enough materials to fire an arrow
-    @SuppressWarnings("deprecation")
 	public Boolean invCheck(Player player, String cost, Boolean remove){
         if(cost.equals(nocost)){
             return Boolean.valueOf(true);
@@ -310,10 +307,10 @@ public class Barrage extends JavaPlugin implements Listener {
             if(entCount == 0 && arrowType != ArrowType.Arrow)
             {
                 ArrowEffect arrowEffect = null;
-                String className = (new StringBuilder("moosecraft.")).append(arrowType.toString()).append("ArrowEffect").toString();
+                String className = (new StringBuilder("net.moosecraft.Barrage.")).append(arrowType.toString()).append("ArrowEffect").toString();
                 try
                 {
-                    arrowEffect = (ArrowEffect)Class.forName(className).newInstance();
+                    arrowEffect = (ArrowEffect)Class.forName(className).getDeclaredConstructor().newInstance();
                 }
                 catch(ClassNotFoundException e)
                 {
@@ -428,10 +425,10 @@ public class Barrage extends JavaPlugin implements Listener {
                 {
                     event.setDamage(0);
                 }
-                String className = (new StringBuilder("moosecraft.")).append(arrowType.toString()).append("ArrowEffect").toString();
+                String className = (new StringBuilder("net.moosecraft.Barrage.")).append(arrowType.toString()).append("ArrowEffect").toString();
                 try
                 {
-                    arrowEffect = (ArrowEffect)Class.forName(className).newInstance();
+                    arrowEffect = (ArrowEffect)Class.forName(className).getDeclaredConstructor().newInstance();
                 }
                 catch(ClassNotFoundException e)
                 {
