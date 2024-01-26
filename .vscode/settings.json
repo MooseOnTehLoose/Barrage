@@ -1,6 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "x:\\Code\\Minecraft\\Spigot\\spigot-api-1.20.4-R0.1-SNAPSHOT-shaded.jar"
-    ]
-}
