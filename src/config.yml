@@ -1,0 +1,23 @@
+#To enable an arrow type, uncomment the line by removing
+# the #. 
+#
+#Costs are given in the format ITEM_NAME:AMOUNT
+#For arrows that have multiple requirements, separate them
+#with a comma. 
+#
+#EX: Frag: TNT:1,Dirt:1,Water Bucket:64
+
+#GlassHead: glass:1
+#APmax: iron_ingot:3,obsidian:1
+#Torch: torch:1
+#Net: string:9
+#Water: water_bucket:1
+#Fire: torch:1,coal:1
+#Lightning: emerald:1,iron_ingot:1,magma_cream:1
+#Mudslinger: sand:1
+#Warp: ender_pearl:1
+#Poison: spider_eye:3,red_mushroom:3,brown_mushroom:3
+#Frag: TNT:1
+#Impact: TNT:1
+#Bugbomb: spider_eye:1,sugar:10
+#PlanetCracker: ghast_tear:1,ender_eye:1,TNT:5,redstone:5
